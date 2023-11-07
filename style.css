@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* tela de loading */
+
+#loading {
+    background:#121214;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hiden;
+}
+
+.dot {
+    border: 15px solid #899095;
+    border-radius: 50%;
+    margin: calc(5px*5);
+}
+.dot:nth-child(1) {
+    animation: dotAnimation .6s infinite ease-in-out alternate;
+}
+.dot:nth-child(2) {
+    animation: dotAnimation .6s infinite ease-in-out alternate .2s;
+}
+.dot:nth-child(3) {
+    animation: dotAnimation .6s infinite ease-in-out alternate .4s;
+}
+
+@keyframes dotAnimation {
+    100% {
+        transform: scale(2);
+    }
+}
+/*alinhamento da pág e fonte*/
+
+body {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    background-color: #121214;
+}
+
+/*título*/
+
+h1 {
+    font-size: 3em;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #899095; ;
+}
+
+h2{
+    font-size: .6em;
+    color: #899095;
+    letter-spacing: 2px;
+    margin-block: 5%;
+}
+
+/*botões*/
+
+#btnContainer button{
+    border: 2px solid #899095;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-inline: 3%;
+    background: none;
+    padding: 15px;
+    color: #899095;
+    transition: all 0.7s;
+}
+#btnContainer button:hover{
+    border: 2px solid lightgreen;
+    color: lightgreen;
+    box-shadow: 0px 0px 15px lightgreen;
+}
+
+
+/*TABULEIRO*/
+
+#gameContainer{
+    display: flex;
+    width: 450px;
+    margin: 5% auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
+
+
+.box{   
+    height: 140px;
+    border: 5px solid #899095;
+    flex: 1 1 33%;
+}
+
+#block-1, #block-2, #block-3 {
+    border-top: none;
+}
+#block-1, #block-4, #block-7 {
+    border-left: none;                                      /*CRIANDO O TABULEIRO REMOVENDO AS BORDAS DE CADA BLOCO*/
+}
+#block-7, #block-8, #block-9 {
+    border-bottom: none;
+}
+#block-3, #block-6, #block-9 {
+    border-right: none;
+}
+
+
+/*SÍMBOLOS*/
+
+.x{
+    font-size: 7em;
+    color: aquamarine;
+    display: inline-block;
+    line-height: 100px;
+}
+.o{
+    font-size: 7em;
+    color:firebrick;
+    display: inline-block;
+    line-height: 100px;
+}
+
+/*PLACAR*/
+
+
+#scoreboardContainer{
+    font-weight: bold;
+    margin: 7% auto;
+    position: relative;
+    font-size: 2.5em;
+    display: flex;
+    flex-direction: column;
+    color: #899095;
+    
+    
+}
+
+#x-scoreboard {
+    font-size: 1.2em;
+    color: aquamarine;
+   
+}
+
+#o-scoreboard {
+    font-size: 1.2em;
+    color: firebrick;
+   
+}
+
+#scoreboard1, #scoreboard2 {
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+
+/*MENSAGEM*/
+#msg p {
+    display: flex;
+    position: absolute;
+    margin: auto;
+    padding: 25px;
+    font-size: 5em;
+    backdrop-filter: blur(15px);
+    color: #121214;
+    min-width: 700px;
+    min-height: 200px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    left: 15%;
+    right: 15%;
+    top: 45%;
+    bottom:30%;
+    border: 2px solid #899095;
+    border-radius: 15px;
+    text-shadow: 1px 1px 10px #899095;
+    
+}
+
+
+/*CLASSE HIDE*/
+.hide {
+    display: none !important;
+}

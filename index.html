@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA VELHA - Ariel Nunes</title>
+</head>
+<body>
+    <h1>Jogo Da Velha</h1> <!-- Título do Jogo -->
+
+    <div id="btnContainer">  <!-- Div container dos botões de seleção de modo de jogo -->
+        <button id="aiPlayer">Single-player (vs IA)</button>
+        <button id="multiPlayer">Multiplayer (Local)</button>
+    </div>
+
+    <div id="gameContainer" class="hide"> <!-- Div container do 'Tabuleiro' do jogo -->
+        <div class="box" id="block-1"></div>
+        <div class="box" id="block-2"></div>
+        <div class="box" id="block-3"></div>
+        <div class="box" id="block-4"></div>  <!-- Cada div com id 'block-*' representa um espaço dentro do tabuleiro -->
+        <div class="box" id="block-5"></div>
+        <div class="box" id="block-6"></div>
+        <div class="box" id="block-7"></div>
+        <div class="box" id="block-8"></div>
+        <div class="box" id="block-9"></div>
+
+        <div id="scoreboardContainer"> 
+            <h2>PLACAR</h2>  <!-- Div container da pontuação do Jogo -->
+            <span class="X-scoreBox">
+                <span id="x-scoreboard">X</span>:
+                <span id="scoreboard1">0</span>    <!-- Pontuação individual de cada player -->
+            </span>
+            <span class="X-scoreBox">
+                <span id="o-scoreboard">O</span>:
+                <span id="scoreboard2">0</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="hide">
+        <div class="x">X</div> <!-- Os elementos 'x' e 'o' já seriam pré carregados para depois somente serem clonados dentro dos rescpectivos campos-->
+        <div class="o">O</div>
+    </div>
+
+    <div id="msg" class="hide"> <!-- Mensagem do vencedor -->
+        <p></p>
+    </div>
+
+    <div id="loading">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <script src="scritp.js"></script>
+</body>
+</html>
